@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenewIt - Find New Homes for Your Old Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset and Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #3f51b5;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        nav ul li a i {
+            margin-right: 5px;
+        }
+
+        nav ul li a:hover {
+            background: #536dfe;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        section ol {
+            list-style: none;
+            counter-reset: section-counter;
+        }
+
+        section ol li {
+            counter-increment: section-counter;
+            margin-bottom: 15px;
+        }
+
+        section ol li::before {
+            content: counter(section-counter);
+            background: #536dfe;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 5px 8px;
+            margin-right: 10px;
+        }
+
+        section form label {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        section form input[type="text"],
+        section form textarea,
+        section form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        section form button[type="submit"] {
+            background: #536dfe;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        section form button[type="submit"]:hover {
+            background: #3f51b5;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #536dfe;
+        }
+
+        .location-container {
+            position: relative;
+        }
+
+        .location-container input[type="text"] {
+            padding-right: 40px; /* Adjust as needed */
+        }
+
+        .location-container a {
+            position: absolute;
+            right: 15px; /* Adjust as needed */
+            top: 50%;
+            transform: translateY(-50%);
+            color: #536dfe;
+            transition: color 0.3s ease;
+        }
+
+        .location-container a:hover {
+            color: #3f51b5;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to RenewIt</h1>
+            <p>Where old products find new homes!</p>
+            <nav>
+                <ul>
+                    <li><a href="#browse"><i class="fas fa-search"></i>Browse Products</a></li>
+                    <li><a href="#post"><i class="fas fa-plus"></i>Post a Product</a></li>
+                    <li><a href="#login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+                    <li><a href="#signup"><i class="fas fa-user-plus"></i>Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container fade-in">
+            <h2>About RenewIt</h2>
+            <p>RenewIt is a platform dedicated to giving old products a second chance. Whether you have items you no longer need or you're searching for something new without breaking the bank, RenewIt connects people in need with those looking to give.</p>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container fade-in">
+            <h2>How It Works</h2>
+            <ol>
+                <li>Post Your Product: Tell us about the item you want to give away.</li>
+                <li>Find Interested Parties: Users interested in your product will reach out to you.</li>
+                <li>Choose Who Gets It: Select the recipient based on their need.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="post">
+    <div class="container fade-in">
+        <h2>Post a Product</h2>
+        <form id="product-form" action="/api/products" method="POST" enctype="multipart/form-data">
+            <label for="user-name"><i class="fas fa-user"></i>Your Name:</label>
+            <input type="text" id="user-name" name="userName" required><br><br>
+            <label for="user-email"><i class="fas fa-envelope"></i>Your Email:</label>
+            <input type="email" id="user-email" name="userEmail" required><br><br>
+            <label for="user-mobile"><i class="fas fa-phone"></i>Your Mobile:</label>
+            <input type="text" id="user-mobile" name="userMobile" required><br><br>
+            <label for="product-name"><i class="fas fa-tag"></i>Product Name:</label>
+            <input type="text" id="product-name" name="productName" required><br><br>
+            <label for="product-description"><i class="fas fa-file-alt"></i>Product Description:</label><br>
+            <textarea id="product-description" name="productDescription" rows="4" cols="50" required></textarea><br><br>
+            <label for="product-category"><i class="fas fa-list"></i>Category:</label>
+            <select id="product-category" name="productCategory" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Clothing">Clothing</option>
+                <!-- Add more categories as needed -->
+            </select><br><br>
+            <label for="product-location"><i class="fas fa-map-marker-alt"></i>Location:</label>
+            <div class="location-container">
+                <input type="text" id="product-location" name="productLocation" required>
+                <!-- Location icon using Font Awesome -->
+                <a id="location-link" target="_blank" href="#"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+
+    <footer>
+        <div class="container fade-in">
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+
+            // Update location link when location input changes
+            $('#product-location').on('input', function () {
+                let location = $(this).val();
+                let mapLink = generateMapLink(location);
+                $('#location-link').attr('href', mapLink);
+            });
+        });
+
+        // Function to generate Google Maps link
+        function generateMapLink(location) {
+            return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+        }
+
+        document.getElementById('product-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Generate unique ID
+            let uniqueID = generateUniqueID();
+
+            let productName = document.getElementById('product-name').value;
+            let productDescription = document.getElementById('product-description').value;
+            let productCategory = document.getElementById('product-category').value;
+            let productLocation = document.getElementById('product-location').value;
+            let userName = document.getElementById('user-name').value;
+            let userEmail = document.getElementById('user-email').value;
+            let userMobile = document.getElementById('user-mobile').value;
+
+            if (productName.trim() === '' || productDescription.trim() === '') {
+                alert('Please fill in all fields.');
+            } else if (productCategory === '') {
+                alert('Please select a category.');
+            } else if (productLocation.trim() === '') {
+                alert('Please enter a location.');
+            } else {
+                // Prompt user to attach files to email
+                let attachFiles = confirm('Do you want to attach files to the email?');
+
+                // Generate Google Maps link
+                let mapLink = generateMapLink(productLocation);
+
+                // Compose email content
+                let emailContent = `Product Name: ${productName}<br>`;
+                emailContent += `Product Description: ${productDescription}<br>`;
+                emailContent += `Category: ${productCategory}<br>`;
+                emailContent += `Location: ${productLocation}<br>`;
+                emailContent += `User Name: ${userName}<br>`;
+                emailContent += `User Email: ${userEmail}<br>`;
+                emailContent += `User Mobile: ${userMobile}<br>`;
+                emailContent += `Unique ID: RIT-${uniqueID}<br>`;
+                emailContent += `Location Map: <a href="${mapLink}">View Location on Google Maps</a>`;
+
+                // Compose email
+                let emailSubject = 'New Product Submission';
+                let emailTo = 'imgtk17@gmail.com';
+
+                // Format email content
+                let mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailContent)}`;
+                window.location.href = mailtoLink;
+
+                if (attachFiles) {
+                    // Do something if files are attached
+                }
+                
+                alert('Product submitted successfully!');
+                document.getElementById('product-form').reset(); // Reset the form after submission
+            }
+        });
+
+        // Function to generate unique ID
+        function generateUniqueID() {
+            return Math.random().toString(36).substr(2, 9);
+        }
+    </script>
+</body>
+</html>
